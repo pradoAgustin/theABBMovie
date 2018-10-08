@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView
+    android:id="@+id/scrollView"
+    xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    app:behavior_overlapTop="78dp"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout android:id="@+id/constraintLayout"
+                                                 android:layout_width="match_parent"
+                                                 android:layout_height="wrap_content">
+
+        <ImageView android:id="@+id/backIcon"
+                   android:layout_width="28dp"
+                   android:layout_height="28dp"
+                   android:layout_marginStart="14dp" android:layout_marginTop="26dp"
+                   android:src="@drawable/ic_launcher_background" app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="parent"/>
+
+        <ImageView android:id="@+id/moviePoster"
+                   android:layout_width="@dimen/detailWithH"
+                   android:layout_height="@dimen/detailheight" android:layout_marginEnd="8dp"
+                   android:layout_marginStart="8dp" android:layout_marginTop="16dp"
+                   app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                   app:layout_constraintTop_toTopOf="@+id/backIcon"/>
+
+        <TextView android:id="@+id/movieTitle"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginEnd="8dp" android:layout_marginStart="8dp"
+                  android:layout_marginTop="16dp"
+                  app:layout_constraintEnd_toEndOf="@+id/moviePoster"
+                  app:layout_constraintStart_toStartOf="@+id/moviePoster"
+                  app:layout_constraintTop_toBottomOf="@+id/moviePoster"
+                  tools:text="BreakingBad"/>
+
+        <TextView android:id="@+id/releaseYear"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginEnd="8dp" android:layout_marginStart="8dp"
+                  android:layout_marginTop="8dp"
+                  app:layout_constraintEnd_toEndOf="@+id/movieTitle"
+                  app:layout_constraintStart_toStartOf="@+id/movieTitle" app:layout_constraintTop_toBottomOf="@+id/movieTitle" tools:text="2001"/>
+
+        <Button android:id="@+id/suscribed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp" android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/moviePoster"
+                app:layout_constraintStart_toStartOf="@+id/moviePoster"
+                app:layout_constraintTop_toBottomOf="@id/releaseYear" android:text="suscripto"/>
+
+        <TextView android:id="@+id/overView"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginEnd="36dp"
+                  android:layout_marginStart="36dp" android:layout_marginTop="8dp"
+                  android:textSize="16sp"
+                  app:layout_constraintEnd_toEndOf="parent"
+                  app:layout_constraintStart_toStartOf="parent"
+                  app:layout_constraintTop_toBottomOf="@+id/suscribed" tools:text="overviw"/>
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

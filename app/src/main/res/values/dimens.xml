@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="detailWithH">182dp</dimen>
+    <dimen name="detailheight">273dp</dimen>
+    <dimen name="detailheithMin">57dp</dimen>
+    <dimen name="detailWithMin">38dp</dimen>
+    <dimen name="newsImageHeigth">72dp</dimen>
+    <dimen name="newsImageWidth">48dp</dimen>
+</resources>
