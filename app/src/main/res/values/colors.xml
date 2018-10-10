@@ -5,4 +5,12 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="black_overlay">#66000000</color>
+
+    <color name="ABBColorWhite">#e1f5ff</color>
+    <color name="ABBColorPureWhite">#ffffff</color>
+    <color name ="ABBDarkGrey">#1e2b31</color>
+    <color name="ABBBlack">#1b1b1b</color>
+    <color name="ABBBGreyDivider">#979797</color>
+    <color name="ABBGreyBackground">#2e2e2e</color>
+    <color name="ABBTransparencyEnd">#091920</color>
 </resources>

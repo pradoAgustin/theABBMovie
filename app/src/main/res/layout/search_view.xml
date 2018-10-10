@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                             xmlns:app="http://schemas.android.com/apk/res-auto"
+                                             android:background="@color/ABBBlack"
+                                             android:id="@+id/searchView"
+                                             xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+                                             android:layout_height="64dp">
+
+    <android.support.constraint.ConstraintLayout android:id="@+id/searchLabel"
+                                                 android:layout_width="0dp"
+                                                 android:layout_height="28dp"
+                                                 android:layout_marginStart="8dp"
+                                                 android:background="@color/ABBGreyBackground"
+                                                 android:orientation="horizontal"
+                                                 app:layout_constraintBottom_toBottomOf="parent"
+                                                 app:layout_constraintEnd_toStartOf="@+id/canceLabel"
+                                                 app:layout_constraintStart_toStartOf="parent"
+                                                 app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView android:id="@+id/searchIcon"
+                   android:layout_width="12dp"
+                   android:layout_height="12dp"
+                   android:layout_marginBottom="8dp"
+                   android:layout_marginTop="8dp"
+                   android:layout_marginStart="8dp"
+                   android:src="@android:drawable/ic_menu_search"
+                   app:layout_constraintBottom_toBottomOf="@+id/searchLabel"
+                   app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="@+id/searchLabel"/>
+
+        <TextView android:id="@+id/goSearch"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginBottom="8dp"
+                  android:clickable="true"
+                  android:focusable="true"
+                  android:layout_marginStart="8dp" android:layout_marginTop="8dp"
+                  android:textColor="@color/ABBColorPureWhite"
+                  android:textSize="16sp"
+                  android:text="@string/search"
+                  android:background="?attr/selectableItemBackground"
+                  app:layout_constraintBottom_toBottomOf="@+id/searchLabel"
+                  app:layout_constraintStart_toEndOf="@+id/searchIcon"
+                  app:layout_constraintTop_toTopOf="@+id/searchLabel" tools:text="@string/search"/>
+
+        <EditText android:id="@+id/editTextSearch"
+                  android:layout_width="0dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginEnd="8dp"
+                  android:textCursorDrawable="@drawable/color_cursor"
+                  android:layout_marginStart="8dp"
+                  android:textColor="@color/ABBColorPureWhite"
+                  android:background="@android:color/transparent"
+                  app:layout_constraintBottom_toBottomOf="@+id/searchLabel"
+                  app:layout_constraintEnd_toStartOf="@+id/cancelIcon"
+                  app:layout_constraintStart_toEndOf="@+id/goSearch"
+                  app:layout_constraintTop_toTopOf="@+id/searchLabel" tools:text="editeext"/>
+
+        <ImageView android:id="@+id/cancelIcon"
+                   android:layout_width="12dp"
+                   android:layout_height="12dp"
+                   android:layout_marginEnd="8dp"
+                   android:layout_marginBottom="8dp"
+                   android:layout_marginTop="8dp"
+                   android:src="@android:drawable/ic_menu_close_clear_cancel"
+                   app:layout_constraintBottom_toBottomOf="@+id/searchLabel"
+                   app:layout_constraintEnd_toEndOf="@+id/searchLabel"
+                   app:layout_constraintTop_toTopOf="@+id/searchLabel"/>
+    </android.support.constraint.ConstraintLayout>
+
+    <TextView android:id="@+id/canceLabel"
+              android:background="?attr/selectableItemBackground"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_marginEnd="8dp"
+              android:layout_marginStart="8dp"
+              android:text="@string/cancel"
+              android:clickable="true"
+              android:focusable="true"
+              android:textColor="@color/ABBColorPureWhite"
+              android:textSize="18sp" app:layout_constraintBottom_toBottomOf="parent"
+              app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@+id/searchLabel"
+              app:layout_constraintTop_toTopOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

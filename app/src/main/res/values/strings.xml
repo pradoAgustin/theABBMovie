@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">ABBMovie</string>
-
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="search">Buscar</string>
+    <string name="cancel">Cancelar</string>
+    <string name="notScuscribed">AGREGAR</string>
+    <string name="suscribed">AGREGADO</string>
 </resources>

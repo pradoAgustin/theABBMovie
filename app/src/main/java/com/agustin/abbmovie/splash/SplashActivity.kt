@@ -19,7 +19,8 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private var configurationResponse: BasicConfigurationResponse? = null
-
+    //the jobs are enqueued and are executed in a chain ,
+    //this is just for testing it could be performed in a better way with RX java.
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.splash_activity)

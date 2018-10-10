@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/gradient_movie"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <ImageView
+        android:layout_width="390dp"
+        android:layout_height="207dp"
+        android:id="@+id/appImage"
+        android:layout_gravity="center_horizontal|top"
+        android:src="@drawable/ic_launcher_background" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:background="@drawable/gradient_movie"
+        android:layout_height="match_parent"></RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="Medium Text"
+        android:id="@+id/appName"
+        android:layout_gravity="center_horizontal|bottom" />
+</FrameLayout>

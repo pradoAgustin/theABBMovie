@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -16,8 +16,59 @@
         <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
     </style>
 
+    <style name="NoActionBarStyle" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
+    <style name="CustomSearchBarActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/ABBBlack</item>
+        <item name="colorPrimaryDark">@color/ABBBlack</item>
+        <item name="colorAccent">@color/ABBColorPureWhite</item>
+        <item name="windowActionBar">false</item>
+    </style>
+
     <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
         <item name="android:background">@color/black_overlay</item>
     </style>
 
+    <style name="ToolBarWithNavigationBack">
+        <item name="navigationIcon">@drawable/abc_ic_ab_back_material</item>
+    </style>
+
+    <style name="CollapsingTextAppearance" parent="Base.TextAppearance.AppCompat.Widget.ActionBar.Title"/>
+    <style name="CollapsingTextAppearance.Inverse" >
+        <item name="android:textSize">30sp</item>
+    </style>
+
+    <style name="MovieSearchCardTitle24sp">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/ABBColorWhite</item>
+    </style>
+
+    <style name="MovieSearchCardGenreWithAlpha12sp">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/ABBColorPureWhite</item>
+        <item name="android:background">@color/ABBDarkGrey</item>
+    </style>
+
+    <style name="newsTitle18sp">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/ABBColorPureWhite</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="newsSubtitle12sp">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/ABBBGreyDivider</item>
+    </style>
+
+    <style name="searchTitle14sp">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/ABBColorPureWhite</item>
+        <item name="android:background">@color/ABBBGreyDivider</item>
+    </style>
 </resources>

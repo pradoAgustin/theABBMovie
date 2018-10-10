@@ -14,7 +14,7 @@ abstract class MovieRecyclerAdapter<T, K : MovieRecyclerViewHolder<T>>(list: Lis
         holder.bindItem(adapterList[position])
     }
 
-    fun onItemsInserted(updatedResults: List<T>?) {
+    private fun onItemsInserted(updatedResults: List<T>?) {
         updatedResults?.also {
             it.forEach {
                 adapterList += (it)
@@ -26,6 +26,10 @@ abstract class MovieRecyclerAdapter<T, K : MovieRecyclerViewHolder<T>>(list: Lis
 
     fun getItem(adapterPosition: Int): T {
         return adapterList[adapterPosition]
+    }
+
+    fun updateItems(list: List<T>?) {
+        onItemsInserted(list)
     }
 
 }

@@ -4,7 +4,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    android:background="?attr/selectableItemBackground"
+    android:layout_marginTop="20dp">
 
     <android.support.constraint.ConstraintLayout android:id="@+id/constraint"
                                                  xmlns:android="http://schemas.android.com/apk/res/android"
@@ -16,10 +19,10 @@
         <ImageView android:id="@+id/moviePoster"
                    android:layout_width="375dp"
                    android:layout_height="156dp"
-                   android:src="@mipmap/ic_launcher"
                    tools:src="@drawable/ic_launcher_background"/>
 
         <TextView android:id="@+id/movieTitle"
+                  style="@style/MovieSearchCardTitle24sp"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
                   android:layout_marginBottom="16dp"
@@ -28,11 +31,25 @@
                   tools:text="SuperGirl"/>
 
         <TextView android:id="@+id/movieGenre"
+                  style="@style/MovieSearchCardGenreWithAlpha12sp"
                   android:layout_width="wrap_content"
                   android:layout_height="wrap_content"
-                  android:layout_marginEnd="16dp" android:layout_marginTop="12dp"
+                  android:layout_marginEnd="16dp"
+                  android:layout_marginTop="12dp"
+                  android:paddingBottom="4dp"
+                  android:paddingEnd="16dp"
+                  android:paddingStart="16dp" android:paddingTop="4dp"
                   app:layout_constraintEnd_toEndOf="parent"
                   app:layout_constraintTop_toTopOf="parent" tools:text="Accion"/>
+
+        <ImageView android:layout_width="0dp"
+                  android:layout_height="0dp"
+                  android:textSize="16sp"
+                   android:id="@+id/firstGradient"
+                  app:layout_constraintBottom_toBottomOf="@+id/moviePoster"
+                  app:layout_constraintEnd_toEndOf="@+id/moviePoster"
+                   android:background="@drawable/gradient_movie"
+                  app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent"/>
 
     </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>

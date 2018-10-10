@@ -25,24 +25,28 @@ class DetailMovieActivity : AppCompatActivity(), AppBarLayout.OnOffsetChangedLis
         setContentView(R.layout.detail_collapsable)
         val movie: Movie = intent.extras[MOVIE_EXTRA] as Movie
         val posterPath = movie.posterPath
-        supportActionBar?.hide()
         flexible_example_appbar.addOnOffsetChangedListener(this)
         mMaxScrollSize = flexible_example_appbar.getTotalScrollRange()
         if (posterPath != null) {
             GlideApi.loadImage(collapseImage, posterPath, CurrentConfiguration.getOriginalSizeConfiguration())
+            GlideApi.loadImage(backImg, posterPath, CurrentConfiguration.getOriginalSizeConfiguration())
         }
 
-        val color : Int? = intent.extras[COLOR_EXTRA] as Int?
+        val color: Int? = intent.extras[COLOR_EXTRA] as Int?
 
-        if(color != null) {
+        if (color != null) {
             val transparency = ColorUtils.setAlphaComponent(color, 128)
             //annonce_main_coordinator.alpha =
         }
 
+        if (posterPath != null) {
+            // GlideApi.loadImage(moviePoster, posterPath, CurrentConfiguration.getOriginalSizeConfiguration())
+        }
 
-        movieTitle.text = movie.title
-        releaseYear.text = movie.releaseDate
-        overView.text = movie.overview
+
+       // movieTitle.text = movie.title
+       // subtitle.text = movie.releaseDate
+        // overView.text = movie.overview
 
     }
 
@@ -53,7 +57,7 @@ class DetailMovieActivity : AppCompatActivity(), AppBarLayout.OnOffsetChangedLis
         fun start(activity: Activity, movieExtra: Movie, color: Int?) {
             val intent = Intent(activity, DetailMovieActivity::class.java)
             intent.putExtra(MOVIE_EXTRA, movieExtra)
-            intent.putExtra(COLOR_EXTRA,color)
+            intent.putExtra(COLOR_EXTRA, color)
             activity.startActivity(intent)
         }
 
@@ -65,6 +69,7 @@ class DetailMovieActivity : AppCompatActivity(), AppBarLayout.OnOffsetChangedLis
 
         val percentage = Math.abs(i) * 100 / mMaxScrollSize
 
+
         if (percentage >= PERCENTAGE_TO_ANIMATE_COLLAPSING_MOVIE && shouldCollapseMovie) {
             shouldCollapseMovie = false
 
@@ -73,7 +78,6 @@ class DetailMovieActivity : AppCompatActivity(), AppBarLayout.OnOffsetChangedLis
                 }
             }).setDuration(200)
                     .start()
-
         }
 
         if (percentage <= PERCENTAGE_TO_ANIMATE_COLLAPSING_MOVIE && !shouldCollapseMovie) {
