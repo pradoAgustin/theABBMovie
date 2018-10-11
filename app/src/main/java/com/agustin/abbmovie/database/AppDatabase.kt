@@ -7,10 +7,10 @@ import android.arch.persistence.room.TypeConverters
 import android.content.Context
 
 
-@Database(entities = [(BasicConfigurationEntity ::class)], version = 1)
+@Database(entities = [(BasicConfigurationEntity ::class),(MovieMatchEntity ::class)], version = 1)
 @TypeConverters(DataConverter::class)
 abstract class AppDatabase : RoomDatabase() {
-   // abstract fun userDao(): UserDao
+    abstract fun movieMatchDao(): MovieMatchDao
     abstract fun basicConfigurationDao() :BasicConfigurationDAO
 
 

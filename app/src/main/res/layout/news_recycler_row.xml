@@ -37,16 +37,16 @@
                   app:layout_constraintStart_toStartOf="@+id/newstitle" app:layout_constraintTop_toBottomOf="@+id/newstitle"/>
 
         <TextView android:id="@+id/sucriptionState"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="20dp"
-                android:background="@drawable/selector_suscription_movie"
-                android:textColor="@drawable/suscribed_text_color_selector"
-                android:textSize="12sp"
-                android:textAlignment="center"
-                app:layout_constraintBottom_toBottomOf="@+id/newsImage"
-                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="@+id/newsImage"
-                tools:text="aaaaaaaaaa"/>
+                  android:layout_width="81dp"
+                  android:layout_height="wrap_content"
+                  android:layout_marginEnd="20dp"
+                  android:background="@drawable/selector_suscription_movie"
+                  android:textAlignment="center"
+                  android:textColor="@drawable/suscribed_text_color_selector"
+                  android:textSize="12sp"
+                  app:layout_constraintBottom_toBottomOf="@+id/newsImage"
+                  app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="@+id/newsImage"
+                  tools:text="aaaaaaaaaa"/>
 
         <LinearLayout android:id="@+id/divider"
                       android:layout_width="0dp"

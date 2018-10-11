@@ -4,4 +4,6 @@
     <string name="cancel">Cancelar</string>
     <string name="notScuscribed">AGREGAR</string>
     <string name="suscribed">AGREGADO</string>
+    <string name="overViewLabel">Overview</string>
+    <string name="emptyQuery">No matches =( , search something</string>
 </resources>

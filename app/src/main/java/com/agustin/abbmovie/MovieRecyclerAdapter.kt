@@ -32,4 +32,9 @@ abstract class MovieRecyclerAdapter<T, K : MovieRecyclerViewHolder<T>>(list: Lis
         onItemsInserted(list)
     }
 
+    fun clearItems() {
+        adapterList = Collections.emptyList()
+        this.notifyDataSetChanged()
+    }
+
 }

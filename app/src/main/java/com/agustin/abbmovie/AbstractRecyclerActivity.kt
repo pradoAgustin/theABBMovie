@@ -2,12 +2,12 @@ package com.agustin.abbmovie
 
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import kotlinx.android.synthetic.main.activity_fullscreen.*
+
 
 abstract class AbstractRecyclerActivity : BaseActivity() {
 
 
-    fun setRecyclerViewScrollListener() {
+    fun setRecyclerViewScrollListener(recyclerView :RecyclerView) {
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView?, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)

@@ -1,14 +1,11 @@
 package com.agustin.abbmovie
 
 import android.content.Context
-import android.support.constraint.ConstraintLayout
 import android.util.AttributeSet
 import android.view.LayoutInflater
 import kotlinx.android.synthetic.main.search_view.view.*
 
-class SearchView : ConstraintLayout {
-private var searchListener : SearchListener? = null
-
+class SearchView : CustomSearchView {
     constructor(context: Context) : super(context)
 
     constructor(context: Context, attrs: AttributeSet?) : super(context, attrs)
@@ -19,29 +16,19 @@ private var searchListener : SearchListener? = null
                 .inflate(R.layout.search_view, this, true)
     }
 
-    fun initializeSearchListener(listener :SearchListener) {
-        searchListener = listener
-        initializeListeners()
-
+    override fun initializeSearchListener(listener :SearchListener) {
+       super.initializeSearchListener(listener)
+       setCancelActionListener(cancelIcon)
+        setCancelActionListener(canceLabel)
+        setSearchActionListener(goSearch)
+        setSearchActionListener(searchIcon)
     }
 
-    private fun initializeListeners() {
-        goSearch.setOnClickListener {
-            val text = getTextFromEditText()
-            searchListener?.also{it.onSearchRequested(text)}
-        }
-
-        canceLabel.setOnClickListener {
-            cleanTextFromEditText()
-            searchListener?.onCancelRequested()
-        }
-    }
-
-    private fun cleanTextFromEditText() {
+    override fun cleanTextFromEditText() {
         editTextSearch.text.clear()
     }
 
-    private fun getTextFromEditText(): String {
+    override fun getTextFromEditText(): String {
         return editTextSearch.text.toString()
     }
 }

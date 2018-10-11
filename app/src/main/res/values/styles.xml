@@ -71,4 +71,9 @@
         <item name="android:textColor">@color/ABBColorPureWhite</item>
         <item name="android:background">@color/ABBBGreyDivider</item>
     </style>
+
+    <style name="searchTitle17sp">
+        <item name="android:textSize">17sp</item>
+        <item name="android:textColor">@color/ABBColorPureWhite</item>
+    </style>
 </resources>

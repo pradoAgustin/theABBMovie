@@ -1,10 +1,11 @@
-package com.agustin.abbmovie.search
+package com.agustin.abbmovie.news
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Intent
 import android.graphics.drawable.BitmapDrawable
 import android.os.Bundle
+import android.support.v7.app.AppCompatActivity
 import android.support.v7.graphics.Palette
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
@@ -12,17 +13,14 @@ import android.view.View
 import android.view.ViewGroup
 import com.agustin.abbmovie.*
 import com.agustin.abbmovie.Detail.DetailMovieActivity
+import com.agustin.abbmovie.search.SearchMovieResponse
+import com.agustin.abbmovie.search.SearchMovieViewModel
 import com.agustin.abbmovie.splash.CurrentConfiguration
-import com.agustin.abbmovie.splash.SplashActivity
-import kotlinx.android.synthetic.main.activity_fullscreen.*
 import kotlinx.android.synthetic.main.movie_search_row.view.*
+import kotlinx.android.synthetic.main.search_trending_activity.*
 
 
-/**
- * An example full-screen activity that shows and hides the system UI (i.e.
- * status bar and navigation/system bar) with user interaction.
- */
-class MovieSearchActivity : AbstractRecyclerActivity() {
+class SearchTrendingMovieActivity : AbstractRecyclerActivity() {
 
     private val searchMovieViewModel: SearchMovieViewModel by lazy {
         ViewModelProviders.of(this).get(SearchMovieViewModel::class.java)
@@ -36,23 +34,29 @@ class MovieSearchActivity : AbstractRecyclerActivity() {
     }
 
     override fun getLayoutResourceId(): Int {
-       return  R.layout.activity_fullscreen
+       return  R.layout.search_trending_activity
     }
 
     private fun initializeUI(mainActivityProductsResponse: SearchMovieResponse?) {
         recyclerView.adapter = SearchMoviesAdapter(mainActivityProductsResponse?.results)
         recyclerView.layoutManager = LinearLayoutManager(this)
-        setRecyclerViewScrollListener()
+        setRecyclerViewScrollListener(recyclerView)
     }
 
     companion object {
 
-        fun startWithClearTop(activity: SplashActivity) {
-            val intent = Intent(activity, MovieSearchActivity::class.java)
+        fun startWithClearTop(activity: AppCompatActivity) {
+            val intent = Intent(activity, SearchTrendingMovieActivity::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP
             activity.startActivity(intent)
         }
+
+        fun start(activity: AppCompatActivity) {
+            val intent = Intent(activity, SearchTrendingMovieActivity::class.java)
+            activity.startActivity(intent)
+        }
     }
+
 
     inner class SearchMoviesAdapter(list: List<Movie>?) : MovieRecyclerAdapter<Movie, SearchMovieViewHolder>(list) {
 
@@ -89,8 +93,8 @@ class MovieSearchActivity : AbstractRecyclerActivity() {
             val palette = Palette.from(bitmap).generate()
             val swatch1 = palette.darkVibrantSwatch
             val color = swatch1?.rgb
-            DetailMovieActivity.start(this@MovieSearchActivity,recyclerAdapter.getItem(adapterPosition),color)
-            //NewsActivity.start(this@MovieSearchActivity)
+
+            DetailMovieActivity.start(this@SearchTrendingMovieActivity,recyclerAdapter.getItem(adapterPosition),color)
         }
     }
 

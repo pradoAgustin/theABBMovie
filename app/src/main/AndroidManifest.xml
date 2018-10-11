@@ -8,10 +8,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
+        android:screenOrientation="portrait"
         android:theme="@style/CustomSearchBarActionBar">
         <activity
-            android:name=".search.MovieSearchActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:name=".news.SearchTrendingMovieActivity"
             android:label="@string/app_name">
         </activity>
         <activity android:name=".splash.SplashActivity">
@@ -22,7 +22,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Detail.DetailMovieActivity"/>
-        <activity android:name=".news.NewsActivity"/>
+        <activity android:name=".search.SearchMovieActivity"/>
     </application>
 
 </manifest>

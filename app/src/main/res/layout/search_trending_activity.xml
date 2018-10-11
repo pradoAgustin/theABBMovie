@@ -4,10 +4,8 @@
               android:orientation="vertical"
               android:background="@color/ABBGreyBackground"
               android:layout_height="match_parent">
-
-
-    <com.agustin.abbmovie.SearchView android:layout_width="match_parent"
-                                     android:layout_height="wrap_content"/>
+<com.agustin.abbmovie.TrendingSearchView android:layout_width="match_parent"
+                                         android:layout_height="wrap_content"/>
 <android.support.v7.widget.RecyclerView android:layout_width="match_parent"
                                         android:id="@+id/recyclerView"
                                         android:layout_marginStart="12dp"

@@ -5,7 +5,7 @@ import android.arch.persistence.room.Entity
 import android.arch.persistence.room.PrimaryKey
 
 @Entity(tableName = "config")
-class BasicConfigurationEntity(
+data class BasicConfigurationEntity(
         @PrimaryKey
         var uid: Int = 0,
         @ColumnInfo(name = "base_url")

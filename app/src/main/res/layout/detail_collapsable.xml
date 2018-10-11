@@ -68,13 +68,13 @@
                 android:orientation="vertical"
                 android:paddingTop="8dp"
                 android:gravity="center"
-                app:layout_scrollFlags="scroll|enterAlways|snap"
-                >
+                app:layout_scrollFlags="scroll|enterAlways|snap">
                 ​
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="24sp"
+                    android:id="@+id/movieTitle"
                     tools:text="hola chiche"
                     />
                 ​
@@ -83,6 +83,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:textSize="16sp"
+                    android:id="@+id/releaseYear"
                     tools:text="chiche bombom"
                     />
 
@@ -91,10 +92,27 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="22dp"
                     android:textSize="16sp"
+                    android:id="@+id/suscriptionState"
                     tools:text="@string/notScuscribed"
                     android:background="@drawable/detail_suscbrided_background_selector"
                     android:textColor="@drawable/detail_suscribed_text_selector"
                     />
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          android:text="@string/overViewLabel"
+                          android:layout_gravity="left"
+                          android:textSize="12sp"
+                          android:layout_marginStart="37dp"
+                    android:id="@+id/overViewTitle"/>
+
+                <TextView android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"
+                          tools:text="esto es un texto largo"
+                          android:layout_marginTop="16dp"
+                          android:layout_marginStart="37dp"
+                          android:layout_marginEnd="37dp"
+                    android:id="@+id/overView"/>
                 ​
             </LinearLayout>
         </android.support.design.widget.AppBarLayout>
@@ -103,6 +121,7 @@
     <ImageView android:id="@+id/backImg"
                android:layout_width="match_parent"
                android:layout_height="match_parent"
-               android:alpha=".75"/>
+               android:alpha=".75" app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintStart_toStartOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>

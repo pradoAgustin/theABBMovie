@@ -8,7 +8,7 @@ import android.util.Log
 import com.agustin.abbmovie.R
 import com.agustin.abbmovie.Service.GenreResponse
 import com.agustin.abbmovie.database.AppDatabase
-import com.agustin.abbmovie.search.MovieSearchActivity
+import com.agustin.abbmovie.search.SearchMovieActivity
 
 class SplashActivity : AppCompatActivity() {
     private val basicConfigurationViewModel: BasicConfigurationViewModel by lazy {
@@ -42,7 +42,8 @@ class SplashActivity : AppCompatActivity() {
             val movieBasicConfiguration = MovieBasicConfiguration(genreResponse.genres.associateBy({ it.id }, { it.name }),
                     it.images.baseUrl, it.images.posterSizes)
             CurrentConfiguration.initializeMovieBasicConfiguration(movieBasicConfiguration)
-            MovieSearchActivity.startWithClearTop(this@SplashActivity)
+            SearchMovieActivity.startWithClearTop(this@SplashActivity)
+            this.finish()
         }
 
     }
@@ -50,9 +51,19 @@ class SplashActivity : AppCompatActivity() {
     private fun updateDB(basicConfigurationResponse: BasicConfigurationResponse?) {
         val entity = basicConfigurationResponse?.toEntity()
         val basicConfigurationDao = AppDatabase.getDatabase(applicationContext).basicConfigurationDao()
+        val movieMatchDao = AppDatabase.getDatabase(applicationContext).movieMatchDao()
+        val movieMatches = movieMatchDao.getAllMoviesById()
+
+        CurrentConfiguration.loadMovieMatches(movieMatches)
+
+        Log.e("user match movies", movieMatches.toString())
+
         if (basicConfigurationDao.getAll().isEmpty() && entity != null) {
             AppDatabase.getDatabase(applicationContext).basicConfigurationDao().insertAll(entity)
-            Log.e("MovieDB", AppDatabase.getDatabase(applicationContext).basicConfigurationDao().getAll().toString())
         }
+
+
+
+
     }
 }
